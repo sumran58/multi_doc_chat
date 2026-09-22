@@ -1,0 +1,105 @@
+Agentic AI
+
+Agentic AI refers to artificial intelligence systems that can autonomously plan, reason, make decisions, and take actions to achieve a specific goal. Unlike traditional chatbots that mainly generate a response to a user's question, AI agents can interact with external tools, retrieve information, execute actions, evaluate results, and continue working until a task is completed.
+
+An AI agent typically consists of several components, including a large language model, tools, memory, planning capabilities, and an execution loop. The language model acts as the reasoning engine of the agent. Tools allow the agent to interact with external systems such as databases, APIs, search engines, calculators, file systems, and business applications.
+
+The basic workflow of an AI agent can be described as understanding the user's goal, analyzing the available information, creating a plan, selecting appropriate tools, executing actions, observing the results, and deciding what to do next. This process can continue for multiple steps until the agent reaches a satisfactory result.
+
+Large Language Models
+
+Large Language Models, commonly called LLMs, are machine learning models trained on large collections of text. They can understand and generate natural language and are commonly used as the reasoning component of AI agents.
+
+Popular LLM providers include OpenAI, Google, Anthropic, Meta, and other model providers. Different models have different capabilities, context windows, latency, pricing, and reasoning performance. Choosing the appropriate model depends on the requirements of the application.
+
+An LLM by itself does not necessarily have access to current information or external systems. Tools and retrieval systems can extend the capabilities of an LLM by allowing it to access information and perform actions outside the model itself.
+
+Tools
+
+Tools are external functions that an AI agent can call when it needs additional information or needs to perform an action. Examples include web search tools, calculators, SQL database tools, weather APIs, email tools, and file management tools.
+
+For example, if an agent receives the question "What is the current weather in Mumbai?", the language model may decide that it needs to use a weather tool instead of attempting to answer from its internal knowledge.
+
+Tool calling allows an agent to move beyond generating text and interact with real-world systems.
+
+Memory
+
+Memory allows an AI agent to maintain useful information across interactions or during a multi-step task. There are different types of memory used in agentic systems.
+
+Short-term memory stores information relevant to the current conversation or task. Long-term memory can store information that may be useful in future interactions. Some systems use vector databases to store and retrieve semantic memories.
+
+Memory can help an agent maintain context, remember previous decisions, and avoid repeating the same work.
+
+Retrieval-Augmented Generation
+
+Retrieval-Augmented Generation, or RAG, combines information retrieval with text generation. Instead of relying only on the knowledge stored inside an LLM, a RAG system retrieves relevant documents from an external knowledge base and provides them to the model as context.
+
+A typical RAG pipeline contains document loading, text splitting, embedding generation, vector storage, retrieval, and response generation.
+
+For example, a company can store its internal documentation in a vector database. When an employee asks a question, the system converts the question into an embedding, searches for similar documents, retrieves the most relevant chunks, and provides those chunks to the LLM.
+
+Vector Databases
+
+Vector databases are designed to store and search numerical representations called embeddings. Embeddings represent the semantic meaning of text, images, or other data as vectors.
+
+Examples of vector databases and vector search systems include Pinecone, Chroma, Weaviate, Qdrant, Milvus, and FAISS.
+
+When a document is added to a vector database, it is usually divided into smaller chunks. Each chunk is converted into an embedding and stored along with metadata. When a user asks a question, the question is also converted into an embedding. The vector database then finds chunks that are semantically similar to the query.
+
+Chunking
+
+Chunking is the process of dividing a large document into smaller pieces before generating embeddings. Chunk size can have a significant impact on retrieval quality.
+
+If chunks are too small, important information may be separated across multiple chunks. If chunks are too large, the retrieved context may contain unnecessary information.
+
+Common chunking strategies include fixed-size chunking, recursive character splitting, sentence-based chunking, and semantic chunking.
+
+The appropriate chunking strategy depends on the structure and characteristics of the documents being processed.
+
+Embeddings
+
+Embeddings are numerical representations of information. Similar pieces of information generally have embeddings that are closer together in vector space.
+
+For example, the sentences "How do I reset my password?" and "I forgot my password and need to change it" have similar meanings and therefore can have similar embeddings.
+
+Embedding models are used during both indexing and retrieval. The same or compatible embedding space should generally be used to embed documents and queries.
+
+Agentic RAG
+
+Agentic RAG extends traditional RAG by allowing an AI agent to control the retrieval process. Instead of retrieving documents only once, an agent can decide when retrieval is required, which tool should be used, whether additional information is needed, and whether the retrieved information is sufficient.
+
+For example, an agent may first search a vector database for information. If the retrieved documents are insufficient, it can perform another search using a different query or call an external web search tool.
+
+This makes Agentic RAG more flexible than a simple fixed retrieval pipeline.
+
+Multi-Agent Systems
+
+A multi-agent system contains multiple specialized AI agents that collaborate to complete a task. Each agent can have a different role, toolset, or responsibility.
+
+For example, a research system could contain a researcher agent, a data analysis agent, a verification agent, and a report-writing agent.
+
+The researcher agent can collect information, the data analyst can process numerical data, the verification agent can check the information, and the writing agent can generate the final report.
+
+Multi-agent systems can be useful for complex workflows where dividing responsibilities improves organization and control.
+
+Agent Evaluation
+
+Evaluating AI agents is important because an agent may produce different results depending on the tools it selects, the sequence of actions it takes, and the information it retrieves.
+
+Evaluation can measure properties such as answer correctness, faithfulness, relevance, retrieval quality, tool usage, latency, and cost.
+
+Frameworks such as Ragas and DeepEval can be used to evaluate different aspects of RAG and LLM applications.
+
+LLMOps
+
+LLMOps refers to the practices used to develop, deploy, monitor, evaluate, and maintain LLM-powered applications in production.
+
+Important LLMOps activities include prompt management, model evaluation, tracing, monitoring, cost tracking, latency monitoring, security, model management, and continuous improvement.
+
+For example, a production RAG application may monitor how many tokens are consumed per request, how long responses take, how often retrieval fails, and whether generated answers are supported by the retrieved context.
+
+The Future of Agentic AI
+
+Agentic AI is moving toward systems that can perform increasingly complex tasks using multiple tools and reasoning steps. Future AI applications may combine LLMs, retrieval systems, memory, planning, APIs, databases, and specialized agents into unified workflows.
+
+Reliable agentic systems require more than a powerful language model. They also require good system design, evaluation, observability, security, error handling, and controlled access to tools.
